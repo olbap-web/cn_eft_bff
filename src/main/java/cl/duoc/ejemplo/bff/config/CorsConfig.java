@@ -1,4 +1,4 @@
-package com.example.cn_eft_bff.configuration;
+package cl.duoc.ejemplo.bff.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
