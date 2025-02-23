@@ -4,32 +4,23 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import cl.duoc.ejemplo.bff.restclients.ClienteRest;
+import cl.duoc.ejemplo.bff.restclients.AlertasRest;
 import cl.duoc.ejemplo.bff.services.BffService;
 
 @Service
 public class BffServiceImpl implements BffService {
 
-	private final ClienteRest clienteRest;
+	private final AlertasRest alertaRest;
 
-	public BffServiceImpl(ClienteRest clienteRest) {
+	public BffServiceImpl(AlertasRest alertaRest) {
 
-		this.clienteRest = clienteRest;
+		this.alertaRest = alertaRest;
 	}
 
-	public String create(Map<String, String> body) {
-		return clienteRest.create(body);
-	}
 
 	public <List>String read() {
-		return clienteRest.read();
+		return alertaRest.read();
 	}
 
-	public String update(String status) {
-		return clienteRest.update(status);
-	}
-
-	public String delete(String authHeader) {
-		return clienteRest.delete(authHeader);
-	}
+	
 }

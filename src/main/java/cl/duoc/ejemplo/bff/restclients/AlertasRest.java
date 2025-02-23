@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "ClienteRest", url = "http://localhost:8181/")
-public interface ClienteRest {
+@FeignClient(name = "AlertasRest", url = "http://localhost:8181/")
+public interface AlertasRest {
 
 	@PostMapping
 	String create(@RequestBody Map<String, String> body);
@@ -20,9 +20,5 @@ public interface ClienteRest {
 	@GetMapping("alertas/")
 	<List>String read();
 
-	@PutMapping
-	String update(@RequestParam("status") String status);
 
-	@DeleteMapping
-	String delete(@RequestHeader("Authorization") String authHeader);
 }
