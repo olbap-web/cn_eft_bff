@@ -40,5 +40,8 @@ public class BffController {
 		return ResponseEntity.ok(senalService.read());
 	}
 
+
+	
+
 	
 }
