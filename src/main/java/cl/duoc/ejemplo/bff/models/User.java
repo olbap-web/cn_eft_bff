@@ -1,24 +1,45 @@
 package cl.duoc.ejemplo.bff.models;
 
 public class User {
-    private String id;
+
+    private String idUsuario;
+    private String username;
+    private String pass;
     private String nombre;
+    private String apellido;
 
+    public User() {}
 
-    // Constructor
-    public User(String id, String nombre ) {
-        this.id = id;
+    public User(String idUsuario, String username, String pass, String nombre, String apellido) {
+        this.idUsuario = idUsuario;
+        this.username = username;
+        this.pass = pass;
         this.nombre = nombre;
-
+        this.apellido = apellido;
     }
 
-    // Getters y Setters
-    public String getId() {
-        return id;
+    public String getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
     public String getNombre() {
@@ -27,5 +48,13 @@ public class User {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 }

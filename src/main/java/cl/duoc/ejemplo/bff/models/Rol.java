@@ -1,31 +1,42 @@
 package cl.duoc.ejemplo.bff.models;
 
 public class Rol {
-    private String id;
-    private String nombre;
+    private int id;
+    private String descripcion;
+    private String estado;
+
 
 
     // Constructor
-    public Rol(String id, String nombre ) {
+    public Rol(int id, String descripcion, String estado ) {
         this.id = id;
-        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.estado = estado;
+
 
     }
 
     // Getters y Setters
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getdescripcion() {
+        return descripcion;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setdescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

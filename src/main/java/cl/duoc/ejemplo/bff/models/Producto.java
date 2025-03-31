@@ -1,24 +1,24 @@
 package cl.duoc.ejemplo.bff.models;
 
-
-public class Product {
-    private String id;
+public class Producto {
+    private int id;
     private String nombre;
+    private int valor;
 
 
     // Constructor
-    public Product(String id, String nombre ) {
+    public Producto(int id, String nombre, int valor) {
         this.id = id;
         this.nombre = nombre;
-
+        this.valor = valor;
     }
 
     // Getters y Setters
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -30,5 +30,10 @@ public class Product {
         this.nombre = nombre;
     }
 
+    public int getValor(){
+        return valor;
+    }
+    public void setValor(int valor){
+        this.valor = valor;
+    }
 }
-
