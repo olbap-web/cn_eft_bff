@@ -11,19 +11,19 @@ import cl.duoc.ejemplo.bff.models.User;
 
 import java.util.List;
 
-@FeignClient(name = "AzureFunctionClientUser", url = "http://localhost:8080/api")
+@FeignClient(name = "AzureFunctionClientUser", url = "https://usuarios-app-rest.azurewebsites.net/")
 public interface UserClient {
 
-    @PostMapping("/usuarios")
+    @PostMapping("api/usuarios")
     String create(@RequestBody User user);
 
-    @GetMapping("/usuarios")
+    @GetMapping("api/usuarios")
     List<User> read();
 
-   @GetMapping("/usuarios/{id}")
+    @GetMapping("api/usuarios/{id}")
     User readById(@PathVariable("id") int id);
 
-    @PutMapping("/usuarios")
+    @PutMapping("api/usuarios")
     User updateUser(@RequestBody User user);
 
 
