@@ -6,19 +6,31 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import cl.duoc.ejemplo.bff.models.GraphQLRequest;
 import cl.duoc.ejemplo.bff.models.Rol;
 
 import java.util.List;
 
-@FeignClient(name = "AzureFunctionClient", url = "http://localhost:7071/api")
+@FeignClient(name = "AzureFunctionClient", url = "https://rol1function.azurewebsites.net")
 public interface RolClient {
 
-    @PostMapping("/rol")
-    String create(@RequestBody Rol rol);
+    //______________ GRAPHQL
 
-    @GetMapping("/rol")
-    List<Rol> read();
+    @PostMapping("/api/rol")
+    String create(@RequestBody GraphQLRequest obj);
+    
+    @PostMapping("/api/rol")
+    String update(@RequestBody GraphQLRequest obj);
 
-   @GetMapping("/rol?id={id}")
-    Rol readById(@PathVariable("id") int id);
+    @PostMapping("/api/rol")
+    String delete(@RequestBody GraphQLRequest obj);
+
+    @PostMapping("/api/rol")
+    String read(@RequestBody GraphQLRequest obj);
+
+    @PostMapping("/api/rol")
+    String readById(@RequestBody GraphQLRequest obj);
+
+    @PostMapping("/api/rol")
+    String userByRol(@RequestBody GraphQLRequest obj);
 }

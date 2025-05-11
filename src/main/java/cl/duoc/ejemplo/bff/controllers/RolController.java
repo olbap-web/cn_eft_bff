@@ -18,17 +18,31 @@ public class RolController {
     }
 
     @GetMapping
-    public List<Rol> obtenerRoles() {
+    public String obtenerRoles() {
         return rolService.obtenerRoles();
     }
 
-    @GetMapping("/{id}")  // Se agrega el ID en la ruta
-    public Rol obtenerRolById(@PathVariable("id") int id) {
+    @GetMapping("/{id}")  
+    public String obtenerRolById(@PathVariable("id") int id) {
         return rolService.getById(id);
+    }
+
+    @GetMapping("/{id}/usuarios")  
+    public String obtenerUsersByRol(@PathVariable("id") int id) {
+        return rolService.getUsersByRol(id);
     }
 
     @PostMapping
     public String crearRol(@RequestBody Rol rol) {
         return rolService.crearRol(rol);
+    }
+
+    @PutMapping
+    public String actualizaRol(@RequestBody Rol rol) {
+        return rolService.updateRol(rol);
+    }
+    @DeleteMapping("/{id}")
+    public String deleteRol(@PathVariable("id") int id) {
+        return rolService.deleteRol(id);
     }
 }
