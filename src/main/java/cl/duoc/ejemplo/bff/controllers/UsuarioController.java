@@ -36,4 +36,5 @@ public class UsuarioController {
     public User updateUser( @RequestBody User usr) {
         return usrService.updateUser(usr);
     }
+
 }

@@ -29,4 +29,8 @@ public class UsuarioService {
     public User updateUser(User usr) {
         return usrClient.updateUser(usr);
     }
+    // public User deletUser(User usr) {
+    //     return usrClient.delte(usr);
+    // }
+
 }
